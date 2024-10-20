@@ -8,10 +8,10 @@ import (
 	"strings"
 )
 
-func day5part1() int {
+func Day5part1() int {
 	result := -1
 
-	seeds, keys, maps := parseSeedMaps("input-day5.txt")
+	seeds, keys, maps := ParseSeedMaps("input-day5.txt")
 
 	for _, seed := range seeds {
 		location := getSeedLocation(seed, keys, maps)
@@ -23,10 +23,10 @@ func day5part1() int {
 	return result // 535088217
 }
 
-func day5part2() int {
+func Day5part2() int {
 
 	result := -1
-	seeds, keys, maps := parseSeedMaps("input-day5.txt")
+	seeds, keys, maps := ParseSeedMaps("input-day5.txt")
 
 	for i := 0; i < len(seeds)-1; i += 2 {
 		startSeed := seeds[i]
@@ -42,7 +42,7 @@ func day5part2() int {
 	return result // 51399228 so slow, needs optimizations !!! TODO
 }
 
-func parseSeedMaps(fileName string) ([]int, []string, map[string][]AlmanachEntry) {
+func ParseSeedMaps(fileName string) ([]int, []string, map[string][]AlmanachEntry) {
 	file, err := os.Open(fileName)
 	if err != nil {
 		log.Fatal(err)

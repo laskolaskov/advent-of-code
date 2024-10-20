@@ -11,7 +11,7 @@ import (
 	"golang.org/x/exp/slices"
 )
 
-func day4part1() int {
+func Day4part1() int {
 	file, err := os.Open("input-day4.txt")
 	if err != nil {
 		log.Fatal(err)
@@ -60,7 +60,7 @@ func day4part1() int {
 	return result // 26914
 }
 
-func day4part2() int {
+func Day4part2() int {
 	file, err := os.Open("input-day4.txt")
 	if err != nil {
 		log.Fatal(err)

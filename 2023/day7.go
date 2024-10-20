@@ -12,7 +12,7 @@ import (
 	"golang.org/x/exp/maps"
 )
 
-var handPower = map[string]int{
+var HandPower = map[string]int{
 	"five of kind":  7,
 	"four of kind":  6,
 	"full house":    5,
@@ -22,7 +22,7 @@ var handPower = map[string]int{
 	"high card":     1,
 }
 
-var cardPower = map[rune]int{
+var CardPower = map[rune]int{
 	'A': 14,
 	'K': 13,
 	'Q': 12,
@@ -39,7 +39,7 @@ var cardPower = map[rune]int{
 	'1': 0,
 }
 
-var cardPowerJoker = map[rune]int{
+var CardPowerJoker = map[rune]int{
 	'A': 14,
 	'K': 13,
 	'Q': 12,
@@ -56,21 +56,21 @@ var cardPowerJoker = map[rune]int{
 	'1': 0,
 }
 
-func day7part1() int {
+func Day7part1() int {
 	hands := parseCardHands("input-day7.txt", false)
 
 	//custom sorting of the hands
 	sort.Slice(hands, func(i, j int) bool {
-		if handPower[hands[i].result] < handPower[hands[j].result] {
+		if HandPower[hands[i].result] < HandPower[hands[j].result] {
 			return true
-		} else if handPower[hands[i].result] > handPower[hands[j].result] {
+		} else if HandPower[hands[i].result] > HandPower[hands[j].result] {
 			return false
 		} else {
 			// if equal, sort by first card power and so on
 			for c := 0; c < 5; c++ {
-				if cardPower[rune(hands[i].old[c])] < cardPower[rune(hands[j].old[c])] {
+				if CardPower[rune(hands[i].old[c])] < CardPower[rune(hands[j].old[c])] {
 					return true
-				} else if cardPower[rune(hands[i].old[c])] > cardPower[rune(hands[j].old[c])] {
+				} else if CardPower[rune(hands[i].old[c])] > CardPower[rune(hands[j].old[c])] {
 					return false
 				} else {
 					//if equal, continue with comparing next char
@@ -90,21 +90,21 @@ func day7part1() int {
 	return result // 252295678
 }
 
-func day7part2() int {
+func Day7part2() int {
 	hands := parseCardHands("input-day7.txt", true)
 
 	//custom sorting of the hands
 	sort.Slice(hands, func(i, j int) bool {
-		if handPower[hands[i].result] < handPower[hands[j].result] {
+		if HandPower[hands[i].result] < HandPower[hands[j].result] {
 			return true
-		} else if handPower[hands[i].result] > handPower[hands[j].result] {
+		} else if HandPower[hands[i].result] > HandPower[hands[j].result] {
 			return false
 		} else {
 			// if equal, sort by first card power and so on
 			for c := 0; c < 5; c++ {
-				if cardPowerJoker[rune(hands[i].old[c])] < cardPowerJoker[rune(hands[j].old[c])] {
+				if CardPowerJoker[rune(hands[i].old[c])] < CardPowerJoker[rune(hands[j].old[c])] {
 					return true
-				} else if cardPowerJoker[rune(hands[i].old[c])] > cardPowerJoker[rune(hands[j].old[c])] {
+				} else if CardPowerJoker[rune(hands[i].old[c])] > CardPowerJoker[rune(hands[j].old[c])] {
 					return false
 				} else {
 					//if equal, continue with comparing next char
@@ -222,7 +222,7 @@ func replaceHighesCardWithJoker(cardValue string) string {
 		if char == "J" {
 			continue
 		}
-		if count > highestCount || (count == highestCount && cardPowerJoker[rune(char[0])] > cardPowerJoker[rune(highestChar[0])]) {
+		if count > highestCount || (count == highestCount && CardPowerJoker[rune(char[0])] > CardPowerJoker[rune(highestChar[0])]) {
 			highestCount = count
 			highestChar = char
 		}

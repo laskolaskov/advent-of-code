@@ -7,8 +7,8 @@ import (
 	"strings"
 )
 
-func day8part1() int {
-	directions, desertMap, _, _ := parseDesertMap("input-day8.txt")
+func Day8part1() int {
+	directions, desertMap, _, _ := ParseDesertMap("input-day8.txt")
 
 	result := 0
 
@@ -54,8 +54,8 @@ func day8part1() int {
 	return result // 13301
 }
 
-func day8part2() int {
-	directions, desertMap, startNodes, _ := parseDesertMap("input-day8.txt")
+func Day8part2() int {
+	directions, desertMap, startNodes, _ := ParseDesertMap("input-day8.txt")
 	result := 0
 
 	limit := len(desertMap) * 1000000 //arbitrary big number to limit the cycle
@@ -121,7 +121,7 @@ func day8part2() int {
 	return result // 7309459565207
 }
 
-func parseDesertMap(fileName string) (string, map[string]MapEntry, []string, []string) {
+func ParseDesertMap(fileName string) (string, map[string]MapEntry, []string, []string) {
 	file, err := os.Open(fileName)
 	if err != nil {
 		log.Fatal(err)

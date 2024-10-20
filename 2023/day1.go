@@ -8,7 +8,7 @@ import (
 	"unicode"
 )
 
-func day1part1() int {
+func Day1part1() int {
 	file, err := os.Open("input-day1.txt")
 	if err != nil {
 		log.Fatal(err)
@@ -47,7 +47,7 @@ func day1part1() int {
 	return result //55130
 }
 
-func day1part2() int {
+func Day1part2() int {
 	tokens := map[string]int{
 		"one":   1,
 		"two":   2,

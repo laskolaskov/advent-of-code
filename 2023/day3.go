@@ -10,12 +10,12 @@ import (
 	"golang.org/x/exp/slices"
 )
 
-var reNumbers = regexp.MustCompile("\\d+")
+var reNumbers = regexp.MustCompile(`\d+`)
 var reAllNumbers = regexp.MustCompile(`-?\d+`)
 var reSymbols = regexp.MustCompile("[^0-9.]")
-var reGears = regexp.MustCompile("\\*")
+var reGears = regexp.MustCompile(`\*`)
 
-func day3part1() int {
+func Day3part1() int {
 	lines := scanFile("input-day3.txt")
 
 	result := 0
@@ -97,7 +97,7 @@ func day3part1() int {
 	return result // 533775
 }
 
-func day3part2() int64 {
+func Day3part2() int64 {
 	lines := scanFile("input-day3.txt")
 
 	var result int64
@@ -179,8 +179,7 @@ func day3part2() int64 {
 			if len(touches) == 2 {
 				fisrt, _ := strconv.Atoi(touches[0])
 				second, _ := strconv.Atoi(touches[1])
-				var ratio int64
-				ratio = int64(fisrt) * int64(second)
+				ratio := int64(fisrt) * int64(second)
 				lineRatioSum += int64(ratio)
 				fmt.Println(gearPos, touches, ratio)
 			} else {

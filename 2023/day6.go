@@ -9,10 +9,10 @@ import (
 	"strings"
 )
 
-func day6part1() int {
+func Day6part1() int {
 	result := 1
 
-	races := parseRaces("input-day6.txt")
+	races := ParseRaces("input-day6.txt")
 
 	for _, r := range races {
 		isEven := false
@@ -45,10 +45,10 @@ func day6part1() int {
 	return result // 1312850
 }
 
-func day6part2() int {
+func Day6part2() int {
 	result := 1
 
-	r := parseRacesPart2("input-day6.txt")
+	r := ParseRacesPart2("input-day6.txt")
 	fmt.Println(r)
 
 	fmt.Println(r)
@@ -82,7 +82,7 @@ func day6part2() int {
 	return result // 36749103 again, bruteforcing is too slow // TODO
 }
 
-func parseRaces(fileName string) []RaceRecord {
+func ParseRaces(fileName string) []RaceRecord {
 	file, err := os.Open(fileName)
 	if err != nil {
 		log.Fatal(err)
@@ -130,7 +130,7 @@ func parseRaces(fileName string) []RaceRecord {
 	return races
 }
 
-func parseRacesPart2(fileName string) RaceRecord {
+func ParseRacesPart2(fileName string) RaceRecord {
 	file, err := os.Open(fileName)
 	if err != nil {
 		log.Fatal(err)

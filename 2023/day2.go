@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func day2part1() int {
+func Day2part1() int {
 	config := map[string]int{
 		"red":   12,
 		"green": 13,
@@ -63,7 +63,7 @@ func day2part1() int {
 	return result // 2439
 }
 
-func day2part2() int {
+func Day2part2() int {
 	file, err := os.Open("input-day2.txt")
 	if err != nil {
 		log.Fatal(err)
