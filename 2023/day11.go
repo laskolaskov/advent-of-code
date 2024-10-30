@@ -4,7 +4,7 @@ import (
 	"math"
 )
 
-func Day11part1() int {
+func Day11part1and2() int {
 	// read file and extract universe matrix (strings are slices of runes)
 	var universe = scanFile("input-day11.txt")
 
