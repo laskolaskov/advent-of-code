@@ -1,12 +1,5 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"log"
-	"os"
-)
-
 const STONE = 'O'
 const GROUND = '.'
 const OBSTACLE = '#'
@@ -171,15 +164,6 @@ func calcWeight(state [][]byte) int {
 	return total
 }
 
-func deepCopy(sl [][]byte) [][]byte {
-	r := [][]byte{}
-	for _, l := range sl {
-		new := append([]byte{}, l...)
-		r = append(r, new)
-	}
-	return r
-}
-
 func compare(arr1, arr2 [][]byte) bool {
 	//we assume the 2D arrays has the same dimensions
 	rows := len(arr1) - 1
@@ -192,40 +176,6 @@ func compare(arr1, arr2 [][]byte) bool {
 		}
 	}
 	return true
-}
-
-func scanBytes(fileName string) [][]byte {
-	file, err := os.Open(fileName)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer file.Close()
-
-	bytes := [][]byte{}
-
-	scanner := bufio.NewScanner(file)
-
-	for scanner.Scan() {
-		//TODO: check more about this bug
-		//reading bytes from scanner and then appending them, results in strange corrupted data (input-day14test2-bug-with-bytes-slice-append.txt)
-		//despite that the line we read is identical(!) to the input, something happens when appending (???)
-		/* b := scanner.Bytes()
-		fmt.Println(b)
-		fmt.Println(string(b))
-		bytes = append(bytes, b) (???? seems to mess the data completely - input-day14test2-bug-with-bytes-slice-append.txt) */
-
-		l := scanner.Text()
-		bytes = append(bytes, []byte(l))
-	}
-
-	return bytes
-}
-
-func printState(state [][]byte) {
-	fmt.Println("----------")
-	for _, l := range state {
-		fmt.Println(string(l))
-	}
 }
 
 func tiltCycle(bytes [][]byte) [][]byte {
