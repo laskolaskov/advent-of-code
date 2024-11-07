@@ -40,7 +40,7 @@ func (h *TileHeap) Pop() any {
 
 // https://www.reddit.com/r/adventofcode/comments/18k9ne5/comment/kdqp7jx/
 // TODO: my implementation is too slow :(
-func Day17part1() int {
+func Day17part1and2() int {
 	plain, end := scanComplexPlain("input-day17.txt")
 
 	seen := []Tile{}

@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"log"
-	"math"
 )
 
 var tiles = map[rune]map[string]bool{
@@ -101,38 +100,6 @@ func CheckAdj(cell []int, dir string, lines []string) ([]int, error) {
 		return nil, fmt.Errorf("no possible connection with this tile")
 	}
 	return adj, nil
-}
-
-// https://en.wikipedia.org/wiki/Shoelace_formula
-/*
-* Each point is described as array of integers.
-* x and y prams show the index of the x and y coords in the point array.
-* ex.: x = 1 and y = 0 means the point array looks like [y, x]
- */
-func Shoelace(points [][]int, x int, y int) float64 {
-	var detSum int
-	for i := 0; i < len(points); i++ {
-		var p1, p2 []int
-		//last index
-		if i == len(points)-1 {
-			p1 = points[i]
-			p2 = points[0] //closing with the first point
-		} else {
-			p1 = points[i]
-			p2 = points[i+1]
-		}
-		//x1*y2 - x2*y1
-		det := p1[x]*p2[y] - p2[x]*p1[y]
-		detSum += det
-	}
-	area := math.Abs(float64(detSum / 2))
-	return area
-}
-
-// https://en.wikipedia.org/wiki/Pick%27s_theorem
-func InsidePointsPickTheorem(a float64, b int) float64 {
-	i := float64(b/2-1) - a
-	return math.Abs(i)
 }
 
 func Day10part1and2() int {
