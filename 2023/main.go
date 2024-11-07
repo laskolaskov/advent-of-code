@@ -4,6 +4,6 @@ import "fmt"
 
 //https://adventofcode.com/2023
 func main() {
-	result := Day16part2()
+	result := Day17part1()
 	fmt.Println(result)
 }

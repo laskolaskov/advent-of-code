@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"unicode"
 
-	"golang.org/x/exp/slices"
+	"slices"
 )
 
 var reNumbers = regexp.MustCompile(`\d+`)

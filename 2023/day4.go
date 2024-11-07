@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"golang.org/x/exp/slices"
+	"slices"
 )
 
 func Day4part1() int {

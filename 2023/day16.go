@@ -1,7 +1,7 @@
 package main
 
 import (
-	"golang.org/x/exp/slices"
+	"slices"
 )
 
 var LEFT string = "left"
