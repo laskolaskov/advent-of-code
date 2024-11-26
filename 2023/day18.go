@@ -132,7 +132,6 @@ func scanDigPlanPart2(fileName string) []DigRow {
 		dir := text[7]
 		count := text[2:7]
 
-		//d, _ := strconv.Atoi(string(dir))
 		hex, _ := strconv.ParseInt(count, 16, 64)
 		row := DigRow{Dir: string(dir), Count: hex}
 		plan = append(plan, row)
