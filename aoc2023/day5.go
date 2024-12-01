@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"bufio"
@@ -11,7 +11,7 @@ import (
 func Day5part1() int {
 	result := -1
 
-	seeds, keys, maps := ParseSeedMaps("input-day5.txt")
+	seeds, keys, maps := ParseSeedMaps("./aoc2023/input-day5.txt")
 
 	for _, seed := range seeds {
 		location := getSeedLocation(seed, keys, maps)
@@ -26,7 +26,7 @@ func Day5part1() int {
 func Day5part2() int {
 
 	result := -1
-	seeds, keys, maps := ParseSeedMaps("input-day5.txt")
+	seeds, keys, maps := ParseSeedMaps("./aoc2023/input-day5.txt")
 
 	for i := 0; i < len(seeds)-1; i += 2 {
 		startSeed := seeds[i]

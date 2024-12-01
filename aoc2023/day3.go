@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"fmt"
@@ -16,7 +16,7 @@ var reSymbols = regexp.MustCompile("[^0-9.]")
 var reGears = regexp.MustCompile(`\*`)
 
 func Day3part1() int {
-	lines := scanFile("input-day3.txt")
+	lines := scanFile("./aoc2023/input-day3.txt")
 
 	result := 0
 
@@ -98,7 +98,7 @@ func Day3part1() int {
 }
 
 func Day3part2() int64 {
-	lines := scanFile("input-day3.txt")
+	lines := scanFile("./aoc2023/input-day3.txt")
 
 	var result int64
 

@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"bufio"
@@ -26,7 +26,7 @@ type Part struct {
 }
 
 func Day19part1() int {
-	flows, parts := scanWorkflowsAndParts("input-day19.txt")
+	flows, parts := scanWorkflowsAndParts("./aoc2023/input-day19.txt")
 	total := 0
 	for _, part := range parts {
 		isAccepted := runFlow(part, flows["in"], flows)
@@ -39,7 +39,7 @@ func Day19part1() int {
 
 // TODO part 2
 func Day19part2() int {
-	flows, _ := scanWorkflowsAndParts("input-day19test.txt")
+	flows, _ := scanWorkflowsAndParts("./aoc2023/input-day19test.txt")
 	for _, f := range flows {
 		fmt.Println(f)
 	}

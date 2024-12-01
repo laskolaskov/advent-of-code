@@ -1,11 +1,11 @@
-package main
+package aoc2023
 
 const STONE = 'O'
 const GROUND = '.'
 const OBSTACLE = '#'
 
 func Day14part1() int {
-	bytes := scanBytes("input-day14.txt")
+	bytes := scanBytes("./aoc2023/input-day14.txt")
 	total := 0
 
 	var ground, obstacles []int
@@ -87,7 +87,7 @@ func Day14part1() int {
 // https://en.wikipedia.org/wiki/Cycle_detection
 func Day14part2() int {
 
-	state := scanBytes("input-day14.txt")
+	state := scanBytes("./aoc2023/input-day14.txt")
 	tortoise := deepCopy(state)
 	hare := deepCopy(tortoise)
 

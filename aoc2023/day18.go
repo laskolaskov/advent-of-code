@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"bufio"
@@ -15,7 +15,7 @@ type DigRow struct {
 }
 
 func Day18part1() int64 {
-	plan := scanDigPlan("input-day18.txt")
+	plan := scanDigPlan("./aoc2023/input-day18.txt")
 
 	polygon := [][]int64{}
 
@@ -53,7 +53,7 @@ func Day18part1() int64 {
 }
 
 func Day18part2() int64 {
-	plan := scanDigPlanPart2("input-day18.txt")
+	plan := scanDigPlanPart2("./aoc2023/input-day18.txt")
 
 	polygon := [][]int64{}
 

@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"fmt"
@@ -104,7 +104,7 @@ func CheckAdj(cell []int, dir string, lines []string) ([]int, error) {
 
 func Day10part1and2() int {
 	// read file and extract maze matrix (strings are slices of runes)
-	var lines = scanFile("input-day10.txt")
+	var lines = scanFile("./aoc2023/input-day10.txt")
 
 	//starting coords
 	var start []int

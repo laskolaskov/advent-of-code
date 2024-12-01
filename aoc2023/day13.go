@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"bufio"
@@ -8,7 +8,7 @@ import (
 )
 
 func Day13part1() int {
-	var patterns = scanPatterns("input-day13.txt")
+	var patterns = scanPatterns("./aoc2023/input-day13.txt")
 	total := 0
 
 	for _, p := range patterns {
@@ -47,7 +47,7 @@ func Day13part1() int {
 }
 
 func Day13part2() int {
-	var patterns = scanPatterns("input-day13.txt")
+	var patterns = scanPatterns("./aoc2023/input-day13.txt")
 	total := 0
 	for _, p := range patterns {
 

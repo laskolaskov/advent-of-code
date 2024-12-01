@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"bufio"
@@ -57,7 +57,7 @@ var CardPowerJoker = map[rune]int{
 }
 
 func Day7part1() int {
-	hands := parseCardHands("input-day7.txt", false)
+	hands := parseCardHands("./aoc2023/input-day7.txt", false)
 
 	//custom sorting of the hands
 	sort.Slice(hands, func(i, j int) bool {
@@ -91,7 +91,7 @@ func Day7part1() int {
 }
 
 func Day7part2() int {
-	hands := parseCardHands("input-day7.txt", true)
+	hands := parseCardHands("./aoc2023/input-day7.txt", true)
 
 	//custom sorting of the hands
 	sort.Slice(hands, func(i, j int) bool {

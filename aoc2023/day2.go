@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"bufio"
@@ -15,7 +15,7 @@ func Day2part1() int {
 		"blue":  14,
 	}
 
-	file, err := os.Open("input-day2.txt")
+	file, err := os.Open("./aoc2023/input-day2.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -64,7 +64,7 @@ func Day2part1() int {
 }
 
 func Day2part2() int {
-	file, err := os.Open("input-day2.txt")
+	file, err := os.Open("./aoc2023/input-day2.txt")
 	if err != nil {
 		log.Fatal(err)
 	}

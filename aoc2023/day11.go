@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"math"
@@ -6,7 +6,7 @@ import (
 
 func Day11part1and2() int {
 	// read file and extract universe matrix (strings are slices of runes)
-	var universe = scanFile("input-day11.txt")
+	var universe = scanFile("./aoc2023/input-day11.txt")
 
 	galaxies := [][]int{}
 	expRows := []int{}

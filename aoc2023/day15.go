@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"log"
@@ -16,7 +16,7 @@ type Lens struct {
 
 func Day15part1() int {
 	h := 0
-	input := scanFile("input-day15.txt")
+	input := scanFile("./aoc2023/input-day15.txt")
 	if len(input) > 1 {
 		log.Fatal("the input must be one long line")
 	}
@@ -29,7 +29,7 @@ func Day15part1() int {
 
 func Day15part2() int {
 	boxes := make([][]Lens, 256)
-	input := scanFile("input-day15.txt")
+	input := scanFile("./aoc2023/input-day15.txt")
 	if len(input) > 1 {
 		log.Fatal("the input must be one long line")
 	}

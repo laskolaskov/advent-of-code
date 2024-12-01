@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"bufio"
@@ -8,7 +8,7 @@ import (
 )
 
 func Day8part1() int {
-	directions, desertMap, _, _ := ParseDesertMap("input-day8.txt")
+	directions, desertMap, _, _ := ParseDesertMap("./aoc2023/input-day8.txt")
 
 	result := 0
 
@@ -55,7 +55,7 @@ func Day8part1() int {
 }
 
 func Day8part2() int {
-	directions, desertMap, startNodes, _ := ParseDesertMap("input-day8.txt")
+	directions, desertMap, startNodes, _ := ParseDesertMap("./aoc2023/input-day8.txt")
 	result := 0
 
 	limit := len(desertMap) * 1000000 //arbitrary big number to limit the cycle

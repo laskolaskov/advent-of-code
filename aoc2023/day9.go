@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"log"
@@ -25,7 +25,7 @@ func Day9part1() int {
 	nextInSeq := make(map[int]int)
 
 	//read file and extract sequences
-	lines := scanFile("input-day9.txt")
+	lines := scanFile("./aoc2023/input-day9.txt")
 	for i, l := range lines {
 		sequence := MapSlice(strings.Split(l, " "), func(el string) int {
 			n, err := strconv.Atoi(el)
@@ -116,7 +116,7 @@ func Day9part2() int {
 	nextInSeq := make(map[int]int)
 
 	//read file and extract sequences
-	lines := scanFile("input-day9.txt")
+	lines := scanFile("./aoc2023/input-day9.txt")
 	for i, l := range lines {
 		sequence := MapSlice(strings.Split(l, " "), func(el string) int {
 			n, err := strconv.Atoi(el)

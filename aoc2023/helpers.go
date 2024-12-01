@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"bufio"
@@ -38,12 +38,12 @@ func scanBytes(fileName string) [][]byte {
 
 	for scanner.Scan() {
 		//TODO: check more about this bug
-		//reading bytes from scanner and then appending them, results in strange corrupted data (input-day14test2-bug-with-bytes-slice-append.txt)
+		//reading bytes from scanner and then appending them, results in strange corrupted data (./aoc2023/input-day14test2-bug-with-bytes-slice-append.txt)
 		//despite that the line we read is identical(!) to the input, something happens when appending (???)
 		/* b := scanner.Bytes()
 		fmt.Println(b)
 		fmt.Println(string(b))
-		bytes = append(bytes, b) (???? seems to mess the data completely - input-day14test2-bug-with-bytes-slice-append.txt) */
+		bytes = append(bytes, b) (???? seems to mess the data completely - ./aoc2023/input-day14test2-bug-with-bytes-slice-append.txt) */
 
 		l := scanner.Text()
 		bytes = append(bytes, []byte(l))

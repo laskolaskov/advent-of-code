@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"bufio"
@@ -12,7 +12,7 @@ import (
 func Day6part1() int {
 	result := 1
 
-	races := ParseRaces("input-day6.txt")
+	races := ParseRaces("./aoc2023/input-day6.txt")
 
 	for _, r := range races {
 		isEven := false
@@ -48,7 +48,7 @@ func Day6part1() int {
 func Day6part2() int {
 	result := 1
 
-	r := ParseRacesPart2("input-day6.txt")
+	r := ParseRacesPart2("./aoc2023/input-day6.txt")
 	fmt.Println(r)
 
 	fmt.Println(r)

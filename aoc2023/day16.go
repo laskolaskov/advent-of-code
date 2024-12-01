@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"slices"
@@ -19,7 +19,7 @@ var energized = [][]int{}
 var energizedFrom = []string{}
 
 func Day16part1() int {
-	state := scanBytes("input-day16.txt")
+	state := scanBytes("./aoc2023/input-day16.txt")
 
 	//reset globals
 	energized = [][]int{}
@@ -34,7 +34,7 @@ func Day16part1() int {
 }
 
 func Day16part2() int {
-	state := scanBytes("input-day16.txt")
+	state := scanBytes("./aoc2023/input-day16.txt")
 
 	best := 0
 

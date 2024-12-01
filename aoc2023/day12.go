@@ -1,4 +1,4 @@
-package main
+package aoc2023
 
 import (
 	"fmt"
@@ -16,7 +16,7 @@ type Entry struct {
 func Day12part1() int {
 	total := 0
 	var entries = []Entry{}
-	var lines = scanFile("input-day12.txt")
+	var lines = scanFile("./aoc2023/input-day12.txt")
 	//split lines into entries with text part(string) and array of group lengths with integer values
 	for _, l := range lines {
 		s := strings.Split(l, " ")
