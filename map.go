@@ -56,4 +56,6 @@ var AocMap map[string]interface{} = map[string]interface{}{
 	"2023-24-2": nil,
 	"2024-01-1": aoc2024.Day1part1,
 	"2024-01-2": aoc2024.Day1part2,
+	"2024-02-1": aoc2024.Day2part1,
+	"2024-02-2": aoc2024.Day2part2,
 }

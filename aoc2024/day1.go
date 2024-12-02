@@ -11,7 +11,7 @@ import (
 )
 
 func Day1part1() int {
-	first, second := parseInputDay1()
+	first, second := parseInputDay1part1()
 
 	if len(first) != len(second) {
 		log.Fatal("input slices should not be with different size, check your input")
@@ -28,7 +28,7 @@ func Day1part1() int {
 }
 
 func Day1part2() int {
-	first, secondMap := parseInputDay2()
+	first, secondMap := parseInputDay1part2()
 
 	total := 0
 
@@ -40,7 +40,7 @@ func Day1part2() int {
 	return total
 }
 
-func parseInputDay1() (sort.IntSlice, sort.IntSlice) {
+func parseInputDay1part1() (sort.IntSlice, sort.IntSlice) {
 	file, err := os.Open("./aoc2024/input-day1.txt")
 	if err != nil {
 		log.Fatal(err)
@@ -66,7 +66,7 @@ func parseInputDay1() (sort.IntSlice, sort.IntSlice) {
 	return first, second
 }
 
-func parseInputDay2() (sort.IntSlice, map[int]int) {
+func parseInputDay1part2() (sort.IntSlice, map[int]int) {
 	file, err := os.Open("./aoc2024/input-day1.txt")
 	if err != nil {
 		log.Fatal(err)

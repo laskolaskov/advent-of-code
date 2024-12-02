@@ -8,7 +8,7 @@ import (
 // https://adventofcode.com/2023
 // https://adventofcode.com/2024
 func main() {
-	key := "2024-01-2"
+	key := "2024-02-1"
 	f := AocMap[key]
 	if f == nil {
 		log.Fatal("No func stored for: " + key)
