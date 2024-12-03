@@ -60,7 +60,7 @@ func isSafe(a, b int, order string) bool {
 }
 
 func parseInputDay2() [][]int {
-	file, err := os.Open("./aoc2024/input-day2.txt")
+	file, err := os.Open("./aoc2024/input-day2test.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
