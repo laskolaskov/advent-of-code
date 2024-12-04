@@ -8,6 +8,18 @@ import (
 	"os"
 )
 
+// directions map for {i, j}, where "i" is row and "j" is column index
+var Directions = map[string][]int{
+	"UP":         {-1, 0},
+	"DOWN":       {1, 0},
+	"RIGHT":      {0, 1},
+	"LEFT":       {0, -1},
+	"UP-LEFT":    {-1, -1},
+	"DOWN-LEFT":  {1, -1},
+	"UP-RIGHT":   {-1, 1},
+	"DOWN-RIGHT": {1, 1},
+}
+
 func scanFile(fileName string) []string {
 	file, err := os.Open(fileName)
 	if err != nil {

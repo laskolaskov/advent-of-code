@@ -9,12 +9,6 @@ import (
 	"strings"
 )
 
-type Match struct {
-	Index int
-	Type  string
-	Val   string
-}
-
 func Day3part1() int {
 	text := parseInputDay3()
 	regex := regexp.MustCompile(`mul\(-?\d+,-?\d+\)`)

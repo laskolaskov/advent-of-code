@@ -6,6 +6,10 @@ import (
 )
 
 var AocMap map[string]interface{} = map[string]interface{}{
+	/**
+	*  AOC 2023
+	*  https://adventofcode.com/2023
+	**/
 	"2023-01-1": aoc2023.Day1part1,
 	"2023-01-2": aoc2023.Day1part2,
 	"2023-02-1": aoc2023.Day2part1,
@@ -54,10 +58,16 @@ var AocMap map[string]interface{} = map[string]interface{}{
 	"2023-23-2": nil,
 	"2023-24-1": nil,
 	"2023-24-2": nil,
+	/**
+	*  AOC 2024
+	*  https://adventofcode.com/2024
+	**/
 	"2024-01-1": aoc2024.Day1part1,
 	"2024-01-2": aoc2024.Day1part2,
 	"2024-02-1": aoc2024.Day2part1,
 	"2024-02-2": aoc2024.Day2part2,
 	"2024-03-1": aoc2024.Day3part1,
 	"2024-03-2": aoc2024.Day3part2,
+	"2024-04-1": aoc2024.Day4part1,
+	"2024-04-2": aoc2024.Day4part2,
 }

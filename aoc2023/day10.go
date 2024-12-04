@@ -58,13 +58,6 @@ var reverseDirection = map[string]string{
 	"LEFT":  "RIGHT",
 }
 
-var directions = map[string][]int{
-	"UP":    {-1, 0},
-	"DOWN":  {1, 0},
-	"RIGHT": {0, 1},
-	"LEFT":  {0, -1},
-}
-
 func GetNext(cell []int, inDir string, lines []string) ([]int, string) {
 	var outDir string
 	//get tile
@@ -77,7 +70,7 @@ func GetNext(cell []int, inDir string, lines []string) ([]int, string) {
 		}
 	}
 	//get the delta for the next cell coords
-	delta := directions[outDir]
+	delta := Directions[outDir]
 	//calculate next cell coords
 	next := []int{cell[0] + delta[0], cell[1] + delta[1]}
 	//return the next cell coords and the reversed outgoing direction
@@ -87,7 +80,7 @@ func GetNext(cell []int, inDir string, lines []string) ([]int, string) {
 
 func CheckAdj(cell []int, dir string, lines []string) ([]int, error) {
 	//get the movement delta for the direction
-	d := directions[dir]
+	d := Directions[dir]
 	//get adj cell coords
 	adj := []int{cell[0] + d[0], cell[1] + d[1]}
 	//check out of bounds
