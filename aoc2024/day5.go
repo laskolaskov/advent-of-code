@@ -16,9 +16,7 @@ func Day5part1() int {
 		//check if each entry has rule for each entry after it
 		has := true
 		for i := 0; i < len(update)-1; i++ {
-			//fmt.Println("i: ", i)
 			for j := i + 1; j < len(update); j++ {
-				//fmt.Println("j: ", j)
 				if !rules[update[i]][update[j]] {
 					has = false
 					break
@@ -31,6 +29,51 @@ func Day5part1() int {
 		if has {
 			mid := (len(update) - 1) / 2
 			total += update[mid]
+		}
+	}
+	return total
+}
+
+func Day5part2() int {
+	rules, updates := parseInputDay5()
+	total := 0
+	for _, update := range updates {
+		//check if each entry has rule for each entry after it
+		has := true
+		for i := 0; i < len(update)-1; i++ {
+			for j := i + 1; j < len(update); j++ {
+				if !rules[update[i]][update[j]] {
+					has = false
+					break
+				}
+			}
+			if !has {
+				break
+			}
+		}
+		if !has {
+			//check the broken update and check for a rule to swap
+			fixed := true
+			for i := 0; i < len(update)-1; i++ {
+				for j := i + 1; j < len(update); j++ {
+					if !rules[update[i]][update[j]] {
+						if rules[update[j]][update[i]] {
+							//swap
+							update[i], update[j] = update[j], update[i]
+						} else {
+							fixed = false
+							break
+						}
+					}
+				}
+				if !fixed {
+					break
+				}
+			}
+			if fixed {
+				mid := (len(update) - 1) / 2
+				total += update[mid]
+			}
 		}
 	}
 	return total
