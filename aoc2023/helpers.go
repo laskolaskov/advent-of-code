@@ -64,14 +64,14 @@ func scanBytes(fileName string) [][]byte {
 	return bytes
 }
 
-func printBytes(state [][]byte) {
+func PrintBytes(state [][]byte) {
 	fmt.Println("----------")
 	for _, l := range state {
 		fmt.Println(string(l))
 	}
 }
 
-func deepCopy(sl [][]byte) [][]byte {
+func DeepCopy(sl [][]byte) [][]byte {
 	r := [][]byte{}
 	for _, l := range sl {
 		new := append([]byte{}, l...)

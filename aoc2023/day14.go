@@ -88,8 +88,8 @@ func Day14part1() int {
 func Day14part2() int {
 
 	state := scanBytes("./aoc2023/input-day14.txt")
-	tortoise := deepCopy(state)
-	hare := deepCopy(tortoise)
+	tortoise := DeepCopy(state)
+	hare := DeepCopy(tortoise)
 
 	var t, h int = 0, 0
 
@@ -118,7 +118,7 @@ func Day14part2() int {
 	//yields the same result as the index of the iteration of first meeting above
 	//means that the cycle starts at the same plase where it is first detected (looks like oddly specific coincidence ???)
 	t = 0
-	tortoise = deepCopy(state)
+	tortoise = DeepCopy(state)
 	for c := 1; c <= 1000000000; c++ {
 
 		//same speed
