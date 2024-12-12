@@ -38,9 +38,57 @@ func Day8part1() int { //bruteforce
 }
 
 func Day8part2() int {
-	//input := parseInputDay8()
-	total := 0
-	return total
+	h, w, input := parseInputDay8()
+	loc := map[string]bool{}
+
+	for _, antennae := range input {
+		for i := 0; i < len(antennae)-1; i++ {
+			for j := i + 1; j < len(antennae); j++ {
+
+				a := antennae[i]
+				b := antennae[j]
+
+				//add both antennae to the locations
+				ka := fmt.Sprintf("%d-%d", a[0], a[1])
+				loc[ka] = true
+				kb := fmt.Sprintf("%d-%d", b[0], b[1])
+				loc[kb] = true
+
+				//go in one direction
+				for {
+					i1 := 2*a[0] - b[0]
+					j1 := 2*a[1] - b[1]
+					if inBounds(i1, j1, h, w) {
+						k1 := fmt.Sprintf("%d-%d", int(i1), int(j1))
+						loc[k1] = true
+					} else {
+						break
+					}
+					b = a
+					a = []int{i1, j1}
+				}
+
+				//reset a and b
+				a = antennae[i]
+				b = antennae[j]
+
+				//go in the other direction
+				for {
+					i2 := 2*b[0] - a[0]
+					j2 := 2*b[1] - a[1]
+					if inBounds(int(i2), int(j2), h, w) {
+						k2 := fmt.Sprintf("%d-%d", int(i2), int(j2))
+						loc[k2] = true
+					} else {
+						break
+					}
+					a = b
+					b = []int{i2, j2}
+				}
+			}
+		}
+	}
+	return len(loc)
 }
 
 func parseInputDay8() (int, int, map[rune][][]int) {
